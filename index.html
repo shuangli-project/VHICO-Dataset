@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VHICO</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+
+
+	<link href="css/scrolling-nav.css" rel="stylesheet">
+	<link href="css/style.css" rel="author stylesheet">
+    </head>
+
+    <body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top scrolled" id="mainNav">
+	    <div class="container bar-container">
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">VHICO Dataset</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+		    <ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="data_analysis/index.html">Data Analysis</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="https://github.com/xavierpuigf/virtualhome">GitHub</a>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
+
+	<header class="headercontainer bg-primary text-white" style="padding: 0%; max-height: none; background: url('images/background.png'); background-repeat: no-repeat; background-position: 30% 10%; background-attachment: fixed; background-size:cover">
+	    <div style="background-color: rgba(160,160,160,0)" class="text-center">
+		<div style="padding-bottom: 10%; padding-top: 12%">
+	    <div class="container titlebox"; style="display: inline-block; background-color:rgba(0,0,0, 0.7); width:auto;">
+		<p style="text-align: center;" class="subtitle"> VHICO Dataset: Videos of Humans Interacting with Common Objects </p>
+	    </div>
+	    </div>
+	    </div>
+	</header>
+
+
+	<hr class="half-rule"/>
+	<section id="about">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12 mx-auto">
+			<span class=titlesec>About</span>
+			<br>
+			<span>
+			    VHICO is a dataset for human-object interaction in videos. There are 5,297 training videos, 635 validation videos, 608 test videos, and 54 unseen test videos of human-object interaction. To test the performance of models on common human-object interaction classes and generalization to new human-object interaction classes, we provide two test splits, the first one has the same human-object interaction classes in the training split while the second one consists of unseen novel classes. 
+				<br><br>
+			    VHICO consists of 193 object classes and 94 action classes. There are 653 action-object pairwise classes in total.
+			    The unseen test dataset contains 51 object classes and 32 action classes with 54 action-object pairwise classes. 
+			    All videos are labeled with text annotations of the human action and the associated object. 
+			    The test and unseen dataset contain the annotations of both human and object bounding boxes. 
+			</span>
+		    </div>
+		</div>
+
+	    </div>
+
+	</section>
+
+
+
+
+	<hr class="half-rule"/>
+	<section class="">
+	    <div class="container" id="models">
+		<div class="row">
+		    <div class="col-md-12 mx-auto">
+			<span class="titlesec"><span></span>Paper</span>
+			<br><br>
+			<div class="publication">
+			    <div class="icon_publication">
+				<a class='paperlink' href='https://arxiv.org/pdf/1806.07011.pdf'>
+				    <img src="images/paper/paper_teaser.png" alt="">
+				</a>
+			    </div>
+			    <div class="content_publication">
+				<p class="title_paper"> Weakly Supervised Human and Object Detection via Spatiotemporal Interactions </p>
+				Shuang Li, Yilun Du, Antonio Torralba, Josef Sivic, Bryan Russell
+				<br>
+				<a href="./paper/virtualhome.pdf"> Link paper</a>
+				<br>
+				<em> IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021. (In submission) </em><br>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+	<hr class="half-rule"/>
+	<hr class="half-rule"/>
+
+	<section id="team">
+	    <div class="container">
+
+		<span class=titlesec>Team</span><br>
+		<div class="row">
+		    <div class="profpic xlarge-1 columns">
+			<a href='http://www.mit.edu/~lishuang/'>
+			    <img  src=./images/people/lishuang.jpg class="figure-img img-fluid rounded-circle">
+			</a>
+			<p class=profname>Shuang Li</p>
+			<p class=institution>MIT</p>
+		    </div>
+
+		    <div class="profpic xlarge-1 columns">
+			<a href='https://yilundu.github.io/'>
+			    <img  src=./images/people/yilun.jpg class="figure-img img-fluid rounded-circle">
+			</a>
+			<p class=profname> Yilun Du </p>
+			<p class=institution>MIT</p>
+		    </div>
+
+		    <div class="profpic xlarge-1 columns">
+			<a href="https://groups.csail.mit.edu/vision/torralbalab/">
+			    <img src=./images/people/antonioTorralba.jpg class="figure-img img-fluid rounded-circle">
+			</a>
+			<p class=profname> Antonio Torralba </p>
+			<p class=institution>MIT</p>
+			</div>
+
+			<div class="profpic xlarge-1 columns">
+			<a href="https://www.di.ens.fr/~josef/">
+			    <img src=./images/people/Josef.jpg class="figure-img img-fluid rounded-circle">
+			</a>
+			<p class=profname> Josef Sivic </p>
+			<p class=institution>INRIA</p>
+			</div>
+
+			<div class="profpic xlarge-1 columns">
+			<a href="https://research.adobe.com/person/bryan-russell/">
+			    <img src=./images/people/bryan.jpeg class="figure-img img-fluid rounded-circle">
+			</a>
+			<p class=profname> Bryan Russell </p>
+			<p class=institution>Adobe</p>
+		    </div>
+		</div>
+	</section>
+
+
+	<div style="text-align:center">
+	    <img src="http://movieqa.cs.toronto.edu/static/images/logos/mit.png" width="100%" style="max-width:150px;" alt="MIT">
+	    <img src="images/logos/inria.png" width="100%" style="max-width:150px;" alt="INRIA">
+	    <img src="images/logos/adobe.png" width="100%" style="max-width:150px;" alt="Adobe">
+	</div>
+
+	<br>
+	<hr class="half-rule"/>
+	<section id="contact">
+	    <div class="container">
+		<span class=titlesec>Contact</span><br>
+		Reach out to <a href="mailto:xavierpuig@csail.mit.edu">lishuang@mit.edu</a> for questions, suggestions, and feedback.
+	    </div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-3 bg-dark">
+	    <div class="container" style="text-align: center">
+		 <a href="http://accessibility.mit.edu" style="margin-left: 20px"> Accessibility </a>
+	    </div>
+	    <!-- /.container -->
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom JavaScript for this theme -->
+	<script src="js/scrolling-nav.js"></script>
+
+    </body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117331227-1"></script>
+    <script>
+	window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-117331227-1');
+    </script>
+
+</html>

@@ -1,0 +1,24 @@
+.synset-list {
+  list-style: none;
+  cursor: pointer;
+  margin-left: 0;
+  padding-left: 0;
+  white-space: normal;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.synset-list li {
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: #A8A8A8;
+  padding: 3px;
+}
+.synset-list li:hover {
+  background-color: #F8F8F8;
+}
+.synset-list li.selected {
+  background-color: #D8D8D8;
+}
+.ui-widget {
+  font-size: 80%;
+}
