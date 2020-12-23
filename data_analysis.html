@@ -33,10 +33,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#overview">Overview</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#triplets">Triplets</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#objects">Objects</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#actions">Actions</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="javascript:;" onClick="showOverview()">Overview</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;"  onClick="showTriplet();">Triplets</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showObject();">Objects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showAction();">Actions</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_download.html">Download</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/ShuangLI59/weakly-supervised-human-object-detection-video">GitHub</a></li>
         </ul>
@@ -51,7 +51,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="overview">
+  <section class="overview">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -107,7 +107,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="triplets">
+  <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -123,7 +123,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="triplets">
+  <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -139,7 +139,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="triplets">
+  <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -155,7 +155,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="triplets">
+  <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -174,7 +174,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="objects">
+  <section class="objects" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -191,7 +191,7 @@
 
 
   <hr class="half-rule"/>
-  <section id="actions">
+  <section class="actions" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
@@ -362,14 +362,45 @@ gtag('config', 'UA-117331227-1');
         },
         options: {
           scales: {
-            yAxes: [{
+            xAxes: [{
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                min: 0,
+                max: 2
               }
             }]
           }
         }
       });
+
+function showOverview() {
+    $('.overview').show();
+    $('.triplets').hide();
+    $('.objects').hide();
+    $('.actions').hide();
+}
+
+function showTriplet() {
+    $('.overview').hide();
+    $('.triplets').show();
+    $('.objects').hide();
+    $('.actions').hide();
+}
+
+function showObject() {
+    $('.overview').hide();
+    $('.triplets').hide();
+    $('.objects').show();
+    $('.actions').hide();
+}
+
+function showAction() {
+    $('.overview').hide();
+    $('.triplets').hide();
+    $('.objects').hide();
+    $('.actions').show();
+}
+
     </script>
 
 
