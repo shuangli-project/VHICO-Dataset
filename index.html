@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>VHICO</title>
+	<title>V-HICO</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,16 +24,19 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top scrolled" id="mainNav">
 	    <div class="container bar-container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">VHICO Dataset</a>
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">V-HICO Dataset</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 		    <ul class="navbar-nav ml-auto">
-			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_download.html">Download</a></li>
+		    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+		    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#paper">Paper</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_analysis.html">Data Analysis</a></li>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_download.html">Download</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_example.html">Explore</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/ShuangLI59/weakly-supervised-human-object-detection-video">Code</a></li>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#team">Team</a></li>
 		    </ul>
 		</div>
 	    </div>
@@ -43,7 +46,7 @@
 	    <div style="background-color: rgba(160,160,160,0)" class="text-center">
 		<div style="padding-bottom: 10%; padding-top: 12%">
 	    <div class="container titlebox"; style="display: inline-block; background-color:rgba(0,0,0, 0.7); width:auto;">
-		<p style="text-align: center;" class="subtitle"> VHICO Dataset: Videos of Humans Interacting with Common Objects </p>
+		<p style="text-align: center;" class="subtitle"> V-HICO Dataset: Videos of Humans Interacting with Common Objects </p>
 	    </div>
 	    </div>
 	    </div>
@@ -58,9 +61,9 @@
 			<span class=titlesec>About</span>
 			<br>
 			<span>
-			    VHICO is a dataset for human-object interaction in videos. There are 5,297 training videos, 635 validation videos, 608 test videos, and 54 unseen test videos of human-object interaction. To test the performance of models on common human-object interaction classes and generalization to new human-object interaction classes, we provide two test splits, the first one has the same human-object interaction classes in the training split while the second one consists of unseen novel classes. 
+			    V-HICO is a dataset for human-object interaction in videos. There are 5,297 training videos, 635 validation videos, 608 test videos, and 54 unseen test videos of human-object interaction. To test the performance of models on common human-object interaction classes and generalization to new human-object interaction classes, we provide two test splits, the first one has the same human-object interaction classes in the training split while the second one consists of unseen novel classes. 
 				<br><br>
-			    VHICO consists of 193 object classes and 94 action classes. There are 653 action-object pairwise classes in total.
+			    V-HICO consists of 193 object classes and 94 action classes. There are 653 action-object pairwise classes in total.
 			    The unseen test dataset contains 51 object classes and 32 action classes with 54 action-object pairwise classes. 
 			    All videos are labeled with text annotations of the human action and the associated object. 
 			    The test and unseen dataset contain the annotations of both human and object bounding boxes. 
@@ -75,7 +78,7 @@
 
 
 	<hr class="half-rule"/>
-	<section class="">
+	<section id="paper">
 	    <div class="container" id="models">
 		<div class="row">
 		    <div class="col-md-12 mx-auto">
@@ -92,8 +95,8 @@
 				Shuang Li, Yilun Du, Antonio Torralba, Josef Sivic, Bryan Russell
 				<br>
 				<a href="./paper/virtualhome.pdf"> Paper</a> &nbsp;&nbsp;
-				<a href="https://shuangli-project.github.io/VHICO-Dataset/"> Dataset</a> &nbsp;&nbsp;
 				<a href="https://shuangli-project.github.io/weakly-supervised-human-object-detection-video/"> Project</a> &nbsp;&nbsp;
+				<a href="https://shuangli-project.github.io/VHICO-Dataset/"> Dataset</a> &nbsp;&nbsp;
 				<a href="https://github.com/ShuangLI59/weakly-supervised-human-object-detection-video"> PyTorch Code</a>
 				<br>
 				<em> IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021. (In submission) </em><br>
