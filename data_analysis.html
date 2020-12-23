@@ -67,10 +67,37 @@
               <br>
               <hr />
               <br>
-              <li>&#9642; Total triplets: 653+54</li>
-              <li>&#9642; Total actions: 193 </li>
-              <li>&#9642; Total objects: 94</li>
-              <li>&#9642; Videos per triplet: </li>
+              <li>&#9642; Total triplets: 756</li>
+              <li>&#9642; Total objects: 244</li>
+              <li>&#9642; Total actions: 99</li>
+              <br>
+              <hr />
+              <br>
+              <li>&#9642; Train triplets 653</li>
+              <li>&#9642; Train objects 193</li>
+              <li>&#9642; Train actions 94</li>
+              <li>&#9642; Videos per triplet: 8.112</li>
+              <br>
+              <hr />
+              <br>
+              <li>&#9642; Validation triplets 229</li>
+              <li>&#9642; Validation objects 137</li>
+              <li>&#9642; Validation actions 83</li>
+              <li>&#9642; Videos per triplet: 2.773</li>
+              <br>
+              <hr />
+              <br>
+              <li>&#9642; Test triplets 222</li>
+              <li>&#9642; Test objects 142</li>
+              <li>&#9642; Test actions 86</li>
+              <li>&#9642; Videos per triplet: 2.739</li>
+              <br>
+              <hr />
+              <br>
+              <li>&#9642; Unseen triplets 52</li>
+              <li>&#9642; Unseen objects 51</li>
+              <li>&#9642; Unseen actions 32</li>
+              <li>&#9642; Videos per triplet: 1.038</li>
             </ul>
         </div>
     </div>
@@ -85,31 +112,65 @@
     <div class="row">
         <div class="col-md-12 mx-auto">
           <br>
-          <h3>Triplets</h3>
-            <ul>
-              <br>
-
-
-              <h3>Sentence Objects per Image</h3>
-                  <div style="width:75%;">
-                    <canvas id="sentenceObject" width="400" height="400"></canvas>
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-            </ul>
+          <h3>Videos per triplet class (Training subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="triplet_video_training" width="400" height="400"></canvas>
+            </div>
         </div>
     </div>
     </div>
   </section>
+
+
+  <hr class="half-rule"/>
+  <section id="triplets">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per triplet class (Validation subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="triplet_video_validation" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <hr class="half-rule"/>
+  <section id="triplets">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per triplet class (Test subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="triplet_video_test" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <hr class="half-rule"/>
+  <section id="triplets">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per triplet class (Unseen subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="triplet_video_unseen" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
 
 
   <hr class="half-rule"/>
@@ -118,7 +179,7 @@
     <div class="row">
         <div class="col-md-12 mx-auto">
           <br>
-          <h3>Objects</h3>
+          <h3>Videos per object class</h3>
             <ul>
               <br>
               <li>Objects</li>
@@ -179,30 +240,27 @@ gtag('js', new Date());
 
 gtag('config', 'UA-117331227-1');
     </script>
+
+
+
+
+
+
+
     <script>
-      var ctx = document.getElementById("sentenceObject").getContext('2d');
+      var ctx = document.getElementById("triplet_video_training").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: ["knitting stitch", "combing hair", "mowing lawn", "pushing cart", "brushing tooth", "shaking head", "kissing people", "pushing car", "shaving head", "sweeping floor", "kicking soccer ball", "telephoning phone", "mopping floor", "playing video game", "folding paper", "brushing hair", "climbing tree", "shaking hand", "peeling apple", "folding clothes", "inflating balloon", "climbing ladder", "snapping finger", "folding napkin", "shaving leg", "shaving beard", "pushing shopping cart", "slapping face", "pressing weight", "frying food", "throwing ball", "juggling ball", "injecting syringe", "cracking egg", "hugging people", "skipping rope", "flipping pancake", "calling cellphone", "typing laptop", "tearing paper", "dunking basketball", "piloting airplane", "tattooing person", "kicking yard field goal", "stretching leg", "calling phone", "throwing baseball", "kicking field goal", "inflating hot air balloon", "eating food"],
           datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Videos',
+            data: [361, 185, 161, 160, 144, 109, 102, 100, 99, 92, 84, 79, 75, 71, 69, 67, 67, 64, 64, 61, 57, 54, 52, 49, 47, 47, 45, 42, 42, 41, 35, 31, 31, 30, 29, 29, 27, 26, 26, 26, 24, 24, 23, 23, 23, 22, 22, 22, 21, 21],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
             ],
             borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
             ],
             borderWidth: 1
           }]
@@ -218,5 +276,104 @@ gtag('config', 'UA-117331227-1');
         }
       });
     </script>
+
+
+
+
+    <script>
+      var ctx = document.getElementById("triplet_video_validation").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting stitch", "combing hair", "shaking head", "mowing lawn", "pushing cart", "brushing tooth", "pushing car", "mopping floor", "shaving head", "kissing people", "kicking soccer ball", "climbing tree", "sweeping floor", "folding paper", "shaving leg", "brushing hair", "inflating balloon", "telephoning phone", "folding clothes", "snapping finger", "kicking ball", "folding napkin", "peeling apple", "playing video game", "frying food", "shaking hand", "pressing weight", "climbing ladder", "frying rice", "calling phone", "throwing baseball", "juggling ball", "stretching leg", "punching bag", "typing keyboard", "peeling potatoe", "playing guitar", "hugging people", "throwing card", "eating food", "pushing shopping cart", "pushing toy car", "picking apple", "flipping pancake", "slapping people", "slapping face", "shaving beard", "skipping rope", "peeling potato", "peeling banana"],
+          datasets: [{
+            label: '# of Videos',
+            data: [46, 22, 21, 19, 18, 16, 14, 12, 12, 11, 10, 10, 9, 9, 9, 9, 8, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+
+
+    <script>
+      var ctx = document.getElementById("triplet_video_test").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting stitch", "combing hair", "pushing cart", "mowing lawn", "brushing tooth", "shaking head", "sweeping floor", "pushing car", "pushing shopping cart", "mopping floor", "kicking soccer ball", "folding paper", "shaving head", "peeling apple", "climbing tree", "shaving beard", "shaving leg", "brushing hair", "snapping finger", "inflating balloon", "telephoning phone", "folding clothes", "injecting syringe", "peeling potato", "calling cellphone", "folding napkin", "kissing people", "pressing weight", "cracking egg", "playing video game", "playing guitar", "frying rice", "stretching leg", "flipping pancake", "typing keyboard", "buttoning button", "assembling computer", "inflating hot air balloon", "combing long hair", "washing hand", "throwing ball", "juggling ball", "eating food", "pushing stroller", "folding paper airplane", "grooming horse", "carving pumpkin", "punching heavy bag", "slapping face", "piloting airplane"],
+          datasets: [{
+            label: '# of Videos',
+            data: [47, 25, 17, 16, 15, 13, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+
+
+    <script>
+      var ctx = document.getElementById("triplet_video_unseen").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["buttoning dress shirt", "taping hockey stick", "plugging white cable", "buttoning suit", "drawing curly hair", "playing chess", "carrying plank", "gripping hockey stick", "carving pottery", "eating messy sandwich", "eating chocolate", "eating hot dog", "inflating trainer peanut ball", "inflating exercise ball", "swinging granddaughter", "chopping fresh tomato", "stroking deer", "removing shell", "massaging grandma", "repairing ceramic flower pot", "repairing photocopier", "brushing brown horse", "slicing fresh fish", "slicing fresh cherry tomatoe", "slicing green bell pepper", "slicing avocado", "slicing mango", "hugging mother", "washing cloths", "picking fresh lime", "picking raw coffee bean", "picking tofu", "peeling red onion", "pressing pizza dough", "placing sandwich", "placing poultry", "assembling wooden", "assembling ikea bed", "pushing little boy", "pushing wheelchair", "pushing grocery cart", "folding bike fold bike", "folding paper napkin", "folding origami paper plane", "putting golden coin", "putting light bulb", "putting cigarette", "unpacking yellow envelope", "unpacking travel bag", "dipping teabag"],
+          datasets: [{
+            label: '# of Videos',
+            data: [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+
+
+
+
 
 </html>
