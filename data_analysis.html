@@ -25,38 +25,44 @@
     <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top scrolled" id="mainNav">
-      <div class="container bar-container">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top scrolled" id="mainNav" role="main">
+    <div class="container bar-container">
     <a class="navbar-brand js-scroll-trigger" href="index.html">VHICO Dataset</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="javascript:;" onClick="showOverview()">Overview</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;"  onClick="showTriplet();">Triplets</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showObject();">Objects</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showAction();">Actions</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="data_download.html">Download</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/ShuangLI59/weakly-supervised-human-object-detection-video">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="data_analysis.html">Data Analysis</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/ShuangLI59/weakly-supervised-human-object-detection-video">Code</a></li>
         </ul>
     </div>
-      </div>
+    </div>
   </nav>
 
 
+  <section class="subnav">
+    <nav class="navbar-expand-sm navbar-light" id="subNav" role="sub">
+      <div class="container bar-container">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="javascript:;" onClick="showOverview();">Overview</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;"  onClick="showTriplet();">Triplets</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showAction();">Actions</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:;" onClick="showObject();">Objects</a></li>
+          </ul>
+      </div>
+    </nav>
+  </section>
 
-
-
-
-
+  
   <hr class="half-rule"/>
   <section class="overview">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
           <br>
-          <h3>Basic Statistics</h3>
+            <h3>Basic Statistics</h3>
             <ul class="list-styled">
               <br>
               <li>&#9642; Total videos: 6,594</li>
@@ -70,34 +76,45 @@
               <li>&#9642; Total triplets: 756</li>
               <li>&#9642; Total objects: 244</li>
               <li>&#9642; Total actions: 99</li>
+              <li>&#9642; Videos per triplet: 8.722</li>
+              <li>&#9642; Videos per action name: 66.606</li>
+              <li>&#9642; Videos per object name: 27.025</li>
               <br>
               <hr />
               <br>
-              <li>&#9642; Train triplets 653</li>
-              <li>&#9642; Train objects 193</li>
-              <li>&#9642; Train actions 94</li>
+              <li>&#9642; Train triplets: 653</li>
+              <li>&#9642; Train objects: 193</li>
+              <li>&#9642; Train actions: 94</li>
               <li>&#9642; Videos per triplet: 8.112</li>
+              <li>&#9642; Videos per action name: 56.351</li>
+              <li>&#9642; Videos per object name: 27.446</li>
               <br>
               <hr />
               <br>
-              <li>&#9642; Validation triplets 229</li>
-              <li>&#9642; Validation objects 137</li>
-              <li>&#9642; Validation actions 83</li>
+              <li>&#9642; Validation triplets: 229</li>
+              <li>&#9642; Validation objects: 137</li>
+              <li>&#9642; Validation actions: 83</li>
               <li>&#9642; Videos per triplet: 2.773</li>
+              <li>&#9642; Videos per action name: 7.651</li>
+              <li>&#9642; Videos per object name: 4.635</li>
               <br>
               <hr />
               <br>
-              <li>&#9642; Test triplets 222</li>
-              <li>&#9642; Test objects 142</li>
-              <li>&#9642; Test actions 86</li>
+              <li>&#9642; Test triplets: 222</li>
+              <li>&#9642; Test objects: 142</li>
+              <li>&#9642; Test actions: 86</li>
               <li>&#9642; Videos per triplet: 2.739</li>
+              <li>&#9642; Videos per action name: 7.070</li>
+              <li>&#9642; Videos per object name: 4.282</li>
               <br>
               <hr />
               <br>
-              <li>&#9642; Unseen triplets 52</li>
-              <li>&#9642; Unseen objects 51</li>
-              <li>&#9642; Unseen actions 32</li>
+              <li>&#9642; Unseen triplets: 52</li>
+              <li>&#9642; Unseen objects: 51</li>
+              <li>&#9642; Unseen actions: 32</li>
               <li>&#9642; Videos per triplet: 1.038</li>
+              <li>&#9642; Videos per action name: 1.688</li>
+              <li>&#9642; Videos per object name: 1.059</li>
             </ul>
         </div>
     </div>
@@ -106,7 +123,22 @@
 
 
 
-  <hr class="half-rule"/>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------ -->  
+  <section class="triplets" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per triplet class (Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="triplet_video_all" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
   <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
@@ -122,7 +154,7 @@
   </section>
 
 
-  <hr class="half-rule"/>
+  
   <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
@@ -138,7 +170,7 @@
   </section>
 
 
-  <hr class="half-rule"/>
+  
   <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
@@ -154,7 +186,7 @@
   </section>
 
 
-  <hr class="half-rule"/>
+  
   <section class="triplets" style="display:none">
     <div class="container">
     <div class="row">
@@ -172,39 +204,166 @@
 
 
 
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-  <hr class="half-rule"/>
-  <section class="objects" style="display:none">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12 mx-auto">
-          <br>
-          <h3>Videos per object class</h3>
-            <ul>
-              <br>
-              <li>Objects</li>
-            </ul>
-        </div>
-    </div>
-    </div>
-  </section>
-
-
-  <hr class="half-rule"/>
   <section class="actions" style="display:none">
     <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">
           <br>
-          <h3>Actions</h3>
-            <ul>
-              <br>
-              <li>Actions</li>
-            </ul>
+          <h3>Videos per action class (Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="action_video_all" width="400" height="400"></canvas>
+            </div>
         </div>
     </div>
     </div>
   </section>
+
+
+  <section class="actions" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per action class (Training subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="action_video_training" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="actions" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per action class (Validation subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="action_video_validation" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="actions" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per action class (Test subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="action_video_test" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="actions" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per action class (Unseen subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="action_video_unseen" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------ -->
+  
+  <section class="objects" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per object class (Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="object_video_all" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="objects" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per object class (Training subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="object_video_training" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="objects" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per object class (Validation subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="object_video_validation" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="objects" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per object class (Test subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="object_video_test" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="objects" style="display:none">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+          <br>
+          <h3>Videos per object class (Unseen subset Top 50)</h3>
+            <div style="width:75%;">
+              <canvas id="object_video_unseen" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
 
 
 
@@ -248,6 +407,40 @@ gtag('config', 'UA-117331227-1');
 
 
     <script>
+      // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      // triplets
+      var ctx = document.getElementById("triplet_video_all").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting stitch", "combing hair", "mowing lawn", "pushing cart", "brushing tooth", "shaking head", "pushing car", "shaving head", "kissing people", "sweeping floor", "kicking soccer ball", "mopping floor", "telephoning phone", "folding paper", "climbing tree", "brushing hair", "playing video game", "peeling apple", "folding clothes", "inflating balloon", "shaking hand", "snapping finger", "shaving leg", "climbing ladder", "folding napkin", "pushing shopping cart", "shaving beard", "pressing weight", "slapping face", "frying food", "throwing ball", "injecting syringe", "juggling ball", "cracking egg", "flipping pancake", "calling cellphone", "hugging people", "skipping rope", "stretching leg", "tearing paper", "peeling potato", "piloting airplane", "typing keyboard", "typing laptop", "calling phone", "throwing baseball", "eating food", "dunking basketball", "playing guitar", "tattooing person"],
+          datasets: [{
+            label: '# of Videos',
+            data: [454, 232, 196, 195, 175, 143, 124, 120, 118, 111, 103, 97, 93, 87, 86, 83, 82, 79, 74, 71, 71, 66, 63, 62, 60, 58, 58, 52, 48, 46, 40, 39, 38, 38, 34, 33, 32, 32, 31, 30, 30, 29, 29, 29, 27, 27, 27, 27, 27, 26],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+   
+
+
+
+
       var ctx = document.getElementById("triplet_video_training").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
@@ -275,12 +468,10 @@ gtag('config', 'UA-117331227-1');
           }
         }
       });
-    </script>
+   
 
 
 
-
-    <script>
       var ctx = document.getElementById("triplet_video_validation").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
@@ -308,10 +499,10 @@ gtag('config', 'UA-117331227-1');
           }
         }
       });
-    </script>
+    
 
 
-    <script>
+    
       var ctx = document.getElementById("triplet_video_test").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
@@ -339,10 +530,10 @@ gtag('config', 'UA-117331227-1');
           }
         }
       });
-    </script>
+    
 
 
-    <script>
+    
       var ctx = document.getElementById("triplet_video_unseen").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
@@ -373,33 +564,357 @@ gtag('config', 'UA-117331227-1');
         }
       });
 
-function showOverview() {
-    $('.overview').show();
-    $('.triplets').hide();
-    $('.objects').hide();
-    $('.actions').hide();
-}
+      // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      // actions
+      var ctx = document.getElementById("action_video_all").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting", "pushing", "combing", "folding", "brushing", "shaving", "shaking", "playing", "mowing", "climbing", "peeling", "kicking", "throwing", "inflating", "kissing", "sweeping", "frying", "mopping", "telephoning", "eating", "snapping", "slapping", "slicing", "injecting", "pressing", "massaging", "calling", "juggling", "picking", "typing", "stretching", "hugging", "washing", "filling", "planting", "cracking", "pouring", "pulling", "unpacking", "tearing", "grooming", "smelling", "carrying", "flipping", "piloting", "drying", "catching", "giving", "skipping", "dunking"],
+          datasets: [{
+            label: '# of Videos',
+            data: [454, 435, 345, 269, 264, 263, 236, 224, 196, 192, 176, 175, 167, 146, 122, 121, 108, 97, 93, 88, 87, 83, 81, 78, 78, 78, 71, 69, 69, 66, 62, 54, 53, 52, 50, 49, 46, 45, 44, 43, 41, 40, 39, 38, 37, 37, 35, 32, 32, 31],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
 
-function showTriplet() {
-    $('.overview').hide();
-    $('.triplets').show();
-    $('.objects').hide();
-    $('.actions').hide();
-}
 
-function showObject() {
-    $('.overview').hide();
-    $('.triplets').hide();
-    $('.objects').show();
-    $('.actions').hide();
-}
 
-function showAction() {
-    $('.overview').hide();
-    $('.triplets').hide();
-    $('.objects').hide();
-    $('.actions').show();
-}
+      var ctx = document.getElementById("action_video_training").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting", "pushing", "combing", "folding", "brushing", "shaving", "shaking", "playing", "mowing", "climbing", "kicking", "throwing", "peeling", "inflating", "kissing", "sweeping", "frying", "telephoning", "mopping", "slapping", "eating", "snapping", "injecting", "pressing", "massaging", "slicing", "calling", "juggling", "typing", "picking", "stretching", "hugging", "washing", "filling", "cracking", "planting", "pouring", "tearing", "pulling", "grooming", "unpacking", "giving", "flipping", "carrying", "drying", "smelling", "piloting", "skipping", "dunking", "catching"],
+          datasets: [{
+            label: '# of Videos',
+            data: [361, 345, 278, 215, 214, 213, 189, 182, 161, 154, 146, 142, 139, 115, 104, 98, 91, 79, 75, 72, 69, 69, 64, 64, 62, 61, 58, 57, 54, 52, 51, 46, 42, 39, 39, 39, 38, 36, 35, 33, 33, 32, 30, 30, 30, 30, 29, 29, 28, 27],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+   
+
+
+
+      var ctx = document.getElementById("action_video_validation").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting", "pushing", "combing", "shaking", "folding", "shaving", "brushing", "playing", "climbing", "mowing", "throwing", "peeling", "kicking", "inflating", "kissing", "mopping", "sweeping", "frying", "eating", "snapping", "telephoning", "slapping", "massaging", "slicing", "calling", "picking", "pressing", "catching", "juggling", "typing", "injecting", "washing", "stretching", "punching", "pulling", "planting", "cracking", "hugging", "filling", "piloting", "flipping", "pouring", "carrying", "unpacking", "dragging", "smelling", "trimming", "crushing", "grooming", "tearing"],
+          datasets: [{
+            label: '# of Videos',
+            data: [46, 43, 33, 30, 26, 26, 26, 23, 22, 19, 18, 18, 17, 14, 13, 12, 11, 11, 10, 10, 8, 8, 8, 7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    
+
+
+    
+      var ctx = document.getElementById("action_video_test").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["knitting", "pushing", "combing", "folding", "shaving", "brushing", "peeling", "playing", "shaking", "mowing", "climbing", "inflating", "kicking", "sweeping", "mopping", "filling", "slicing", "injecting", "snapping", "throwing", "picking", "placing", "massaging", "telephoning", "frying", "juggling", "calling", "eating", "stretching", "typing", "buttoning", "pressing", "planting", "smelling", "washing", "grooming", "kissing", "unpacking", "pulling", "cracking", "sawing", "assembling", "taping", "flipping", "spinning", "punching", "pouring", "carrying", "tearing", "piloting"],
+          datasets: [{
+            label: '# of Videos',
+            data: [47, 44, 34, 25, 24, 23, 18, 18, 17, 16, 16, 15, 12, 11, 10, 9, 8, 8, 8, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    
+
+
+    
+      var ctx = document.getElementById("action_video_unseen").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["slicing", "buttoning", "eating", "picking", "pushing", "folding", "putting", "taping", "inflating", "repairing", "placing", "assembling", "unpacking", "plugging", "drawing", "playing", "carrying", "gripping", "carving", "swinging", "chopping", "stroking", "removing", "massaging", "brushing", "hugging", "washing", "peeling", "pressing", "dipping", "spitting", "sweeping"],
+          datasets: [{
+            label: '# of Videos',
+            data: [5, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 2
+              }
+            }]
+          }
+        }
+      });
+
+
+
+
+      // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      // actions
+      var ctx = document.getElementById("object_video_all").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["stitch", "hair", "head", "floor", "people", "cart", "lawn", "tooth", "car", "ball", "tree", "paper", "phone", "soccer ball", "apple", "food", "hand", "leg", "clothes", "beard", "video game", "face", "rope", "balloon", "finger", "weight", "ladder", "napkin", "shopping cart", "egg", "dog", "foot", "basketball", "person", "baseball", "syringe", "cat", "bag", "flower", "cellphone", "pancake", "arm", "potato", "keyboard", "airplane", "pumpkin", "laptop", "meat", "wood", "guitar"],
+          datasets: [{
+            label: '# of Videos',
+            data: [454, 355, 279, 209, 202, 198, 196, 177, 158, 133, 127, 127, 126, 120, 108, 102, 102, 102, 94, 87, 82, 79, 75, 74, 67, 64, 62, 60, 58, 55, 51, 51, 51, 46, 45, 44, 36, 36, 36, 35, 34, 33, 32, 32, 31, 30, 29, 27, 27, 27],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+
+
+
+      var ctx = document.getElementById("object_video_training").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["stitch", "hair", "head", "people", "floor", "cart", "lawn", "tooth", "car", "phone", "ball", "paper", "tree", "soccer ball", "hand", "food", "apple", "clothes", "leg", "face", "video game", "beard", "rope", "balloon", "ladder", "finger", "weight", "napkin", "egg", "shopping cart", "basketball", "dog", "foot", "person", "syringe", "baseball", "cat", "bag", "cellphone", "arm", "flower", "pancake", "laptop", "airplane", "pumpkin", "box", "keyboard", "potato", "yard field goal", "fish"],
+          datasets: [{
+            label: '# of Videos',
+            data: [361, 282, 224, 174, 168, 163, 161, 146, 127, 106, 103, 103, 98, 98, 89, 88, 85, 79, 77, 71, 71, 68, 66, 60, 54, 53, 51, 49, 46, 45, 43, 42, 41, 39, 36, 36, 29, 29, 28, 28, 27, 27, 26, 25, 25, 24, 24, 23, 23, 22],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+   
+
+
+
+      var ctx = document.getElementById("object_video_validation").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["stitch", "hair", "head", "floor", "people", "lawn", "ball", "cart", "car", "tooth", "phone", "leg", "tree", "paper", "soccer ball", "apple", "food", "balloon", "clothes", "beard", "dog", "hand", "rope", "finger", "basketball", "toy car", "napkin", "video game", "baseball", "bag", "weight", "ladder", "person", "kid", "long hair", "meat", "egg", "rice", "football", "foot", "banana", "keyboard", "face", "flower", "potatoe", "neck", "guitar", "vegetable", "water", "cup"],
+          datasets: [{
+            label: '# of Videos',
+            data: [46, 35, 33, 21, 20, 19, 18, 18, 17, 16, 13, 13, 13, 12, 12, 11, 9, 8, 8, 7, 7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    
+
+
+    
+      var ctx = document.getElementById("object_video_test").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["stitch", "hair", "head", "floor", "cart", "tree", "lawn", "tooth", "car", "ball", "beard", "apple", "leg", "paper", "shopping cart", "soccer ball", "people", "weight", "phone", "clothes", "finger", "balloon", "hand", "foot", "syringe", "potato", "cellphone", "food", "son", "flower", "napkin", "cat", "button", "egg", "video game", "guitar", "horse", "vegetable", "meat", "rice", "baseball", "shirt", "face", "pancake", "keyboard", "person", "computer", "girl", "hot air balloon", "long hair"],
+          datasets: [{
+            label: '# of Videos',
+            data: [47, 38, 22, 20, 17, 16, 16, 15, 14, 12, 12, 12, 12, 12, 10, 10, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    
+
+
+    
+      var ctx = document.getElementById("object_video_unseen").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["hockey stick", "dress shirt", "white cable", "suit", "curly hair", "chess", "plank", "pottery", "messy sandwich", "chocolate", "hot dog", "trainer peanut ball", "exercise ball", "granddaughter", "fresh tomato", "deer", "shell", "grandma", "ceramic flower pot", "photocopier", "brown horse", "fresh fish", "fresh cherry tomatoe", "green bell pepper", "avocado", "mango", "mother", "cloths", "fresh lime", "raw coffee bean", "tofu", "red onion", "pizza dough", "sandwich", "poultry", "wooden", "ikea bed", "little boy", "wheelchair", "grocery cart", "bike fold bike", "paper napkin", "origami paper plane", "golden coin", "light bulb", "cigarette", "yellow envelope", "travel bag", "teabag", "camel"],
+          datasets: [{
+            label: '# of Videos',
+            data: [3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(54, 162, 235, 0.2)"
+            ],
+            borderColor: [
+              "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)", "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 2
+              }
+            }]
+          }
+        }
+      });
+
+
+
+
+
+
+      function showOverview() {
+          $('.overview').show();
+          $('.triplets').hide();
+          $('.objects').hide();
+          $('.actions').hide();
+      }
+
+      function showTriplet() {
+          $('.overview').hide();
+          $('.triplets').show();
+          $('.objects').hide();
+          $('.actions').hide();
+      }
+
+      function showObject() {
+          $('.overview').hide();
+          $('.triplets').hide();
+          $('.objects').show();
+          $('.actions').hide();
+      }
+
+      function showAction() {
+          $('.overview').hide();
+          $('.triplets').hide();
+          $('.objects').hide();
+          $('.actions').show();
+      }
+
+      // $(".overview > .triplets").click(function(){
+      //   $(".overview > .triplets").removeClass("active");
+      //   $(this).addClass("active");
+      // });
+
 
     </script>
 
