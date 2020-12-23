@@ -431,3 +431,9 @@ button.search_top:hover {
 	font-size: 1.5em;
     }
 }
+
+table, th, td {
+  /*border: 1px solid black;*/
+  padding: 35px;
+}
+
